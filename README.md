@@ -13,7 +13,7 @@ For each system, for example the Camera system, I created a dedicated module. Ea
 I was focused on only creating client systems though so I don't have server systems in this project. I also have a `Shared` within the `Modules` folder of the `ReplicatedStorage` which would contain modules and scripts that are shared between the server and client, however just like with server systems, I did not create shared modules for this project. 
 
 I had a "two-phase initialization" system for both my server and client systems:
-- When a server is created, the [Server](src/server/Server.server.luau) script, located in `ServerScriptService`, will first run. It will construct the class. After each system has been constructed, the `.start()` method of each system will be called.
+- When a server is created, the [Server](src/server/Server.server.luau) script, located in `ServerScriptService`, will first run. It will construct the object. After each system has been constructed, the `.start()` method of each system will be called.
 - When a player joins the game, the [client_init_load](src/client/client_init_load.client.luau) script, located in `StarterPlayerScripts` will first run. It requires [ClientModules](src/client/ClientModules.luau) which just like the [Server](src/server/Server.server.luau) script, will construct objects of systems specific to the client. After each system has been constructed, the `.start()` method of each system will be called.
 
 ## Systems

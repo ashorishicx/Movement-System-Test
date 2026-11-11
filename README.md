@@ -16,3 +16,6 @@ I had a "two-phase initialization" system for both my server and client systems:
 - When a player joins the game, the [client_init_load](src/client/client_init_load.client.luau) script, located in `StarterPlayerScripts` will first run. It requires [ClientModules](src/client/ClientModules.luau) which just like the [Server](src/server/Server.server.luau) script, will construct objects of systems specific to the client. After each system has been constructed, the `.start()` method of each system will be called.
 
 ## Systems
+- [Movement system w/ sprinting + double-jump](src/Modules/Client/MovementController.luau)
+- [Stamina that depletes when sprinting](src/Modules/Client/StaminaSystem.luau)
+- [Camera w/ sprinting fov change](src/Modules/Client/CameraController.luau)

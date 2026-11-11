@@ -1,8 +1,4 @@
 # Movement System Test
-The purpose of this project was to learn how to script certain systems, such as:
-- scripts to load and initialize client modules
-- scripts to load and initialize server modules
-- create a sprinting system
-- create a stamina system
-- create a double-jump system
-- learn how to properly organize scripts (architecture) 
+
+This is NOT a released game. This is a Roblox place dedicated for experimentation and testing. This was my attempt of implementing a single-script architecture and OOP with two phase initialization (first each module is constructed, and then after all other modules are constructed, I initialized/started each module). For each system I had in my game, I had a module specifically dedicated to it. I tried creating several systems in this project: sprinting system, stamina system, and a camera system.
+> **NOTE**: I created this project after about a year into coding on Roblox. Prior to that, I have had experience to coding in Scratch and some basic programming in Python, and while learning Luau, I was also learning basic Java programming. I would consider my process of learning to script on Roblox a bit weird because I mostly focused on coding systems rather than coding small models, which is probably not common considering most people would have started with the latter first.

@@ -6,7 +6,12 @@ This is NOT a released game. This is a Roblox place dedicated for experimentatio
 The remaining information in this README will detail what I've created in this project.
 
 ## Architecture
-For each system, for example the Camera system, I created a dedicated module. Each system is an object, so modules are class definitions of the system. There are two types of systems in my project, server systems and client systems. I ended up only creating client systems and never actually got to making Server systems though.
+For each system, for example the Camera system, I created a dedicated module. Each system is an object, so modules are class definitions of the system. There are two types of systems in my project
+- server systems, which are stored in the `Modules` folder within the `ServerScriptService`
+- client systems, which are stored in the `Client` folder which is within the `Modules` folder that is in the `ReplicatedStorage`. I ended up only creating client systems and never actually got to making Server systems though.
+- Within the `Modules` folder in my `ReplicatedStorage` I also have a `Shared` folder which would contain modules and scripts that are shared between the server and client, however just like with server systems, I never got to creating those scripts. I was focused on creating client systems for this project. 
+
+I had a "two-phase initialization" system for both my server and client systems:
 - When a server is created, the [Server](../server/Server.server.luau) script, located in `ServerScriptService`, will first run. It will construct the class. After each system has been constructed, the `.start()` method of each system will be called.
 - When a player joins the game, the [client_init_load](../client/client_init_load.client.luau) script, located in `StarterPlayerScripts` will first run. It requires [ClientModules](../client/ClientModules.luau) which just like the [Server](../server/Server.server.luau) script, will construct objects of systems specific to the client. After each system has been constructed, the `.start()` method of each system will be called.
 
